@@ -9,17 +9,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping("/ecom/v1/home")
 public class HomeController {
     private ObjectMapper objectMapper;
     @GetMapping("/")
     public ResponseEntity<HomePageProduct> showProductList() {
+        log.info("Fetching home page product list");
         HomePageProduct homePageProduct = null;
          InputStream inputStream = getClass().getClassLoader().getResourceAsStream("HomePageProduct.json");
          try{
+            log.info("Mapping home product JSON to HomePageProduct object");
             homePageProduct = objectMapper.readValue(inputStream, HomePageProduct.class);
          }catch(Exception e) {
+            log.info("Error while mapping JSON to HomePageProduct object");
             e.printStackTrace();
             return ResponseEntity.status(500).body(null);
          }
