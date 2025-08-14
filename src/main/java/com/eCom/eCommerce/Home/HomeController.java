@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/ecom/v1/home")
 public class HomeController {
-    private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper = new ObjectMapper();
     @GetMapping("/")
     public ResponseEntity<HomePageProduct> showProductList() {
         log.info("Fetching home page product list");
