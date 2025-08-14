@@ -1,0 +1,51 @@
+[
+    {
+      "productId": "prod001",
+      "productName": "Men's Classic Sneakers",
+      "price": 59.99,
+      "description": "Comfortable and stylish sneakers designed for everyday wear. Breathable material and durable sole for all-day comfort.",
+      "sizes": ["6", "7", "8", "9", "10", "11"],
+      "images": {
+        "white": "https://example.com/images/sneakers_white.jpg",
+        "black": "https://example.com/images/sneakers_black.jpg",
+        "blue": "https://example.com/images/sneakers_blue.jpg"
+      }
+    },
+    {
+      "productId": "prod002",
+      "productName": "Women's Summer Dress",
+      "price": 39.99,
+      "description": "Lightweight and flowy summer dress perfect for casual outings. Available in multiple vibrant colors.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": {
+        "red": "https://example.com/images/summer_dress_red.jpg",
+        "yellow": "https://example.com/images/summer_dress_yellow.jpg",
+        "green": "https://example.com/images/summer_dress_green.jpg"
+      }
+    },
+    {
+      "productId": "prod003",
+      "productName": "Unisex Hoodie",
+      "price": 45.0,
+      "description": "Cozy and warm hoodie made from premium cotton blend. Perfect for chilly evenings.",
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "images": {
+        "gray": "https://example.com/images/hoodie_gray.jpg",
+        "black": "https://example.com/images/hoodie_black.jpg",
+        "navy": "https://example.com/images/hoodie_navy.jpg"
+      }
+    },
+    {
+      "productId": "prod004",
+      "productName": "Sports Wristwatch",
+      "price": 120.5,
+      "description": "Water-resistant sports wristwatch with stopwatch and LED backlight. Built for active lifestyles.",
+      "sizes": [],
+      "images": {
+        "black": "https://example.com/images/watch_black.jpg",
+        "silver": "https://example.com/images/watch_silver.jpg",
+        "gold": "https://example.com/images/watch_gold.jpg"
+      }
+    }
+  ]
+  
