@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/ecom/v1/home")
 public class HomeController {
     private ObjectMapper objectMapper = new ObjectMapper();
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<HomePageProduct>> showProductList() {
         log.info("Fetching home page product list");
         List<HomePageProduct> homePageProducts = null;
@@ -34,10 +34,7 @@ public class HomeController {
             e.printStackTrace();
             return ResponseEntity.status(500).body(null);
         }
+        log.info("Home data is  : {}", homePageProducts);
         return ResponseEntity.ok(homePageProducts);
-    }
-    @GetMapping("/about")
-    public String showAboutPage() {
-        return "About Us: We are an e-commerce platform dedicated to providing the best online shopping experience.";
     }
 }
