@@ -9,8 +9,5 @@ import com.eCom.eCommerce.User.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
 
-    static Optional <User> findByEmail(String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByEmail'");
-    }
+    Optional<User> findByEmail(String email);
 } 

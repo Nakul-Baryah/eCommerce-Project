@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,8 +15,6 @@ import com.eCom.eCommerce.Home.Login.LoginRequest;
 import com.eCom.eCommerce.Home.Login.LoginResponse;
 import com.eCom.eCommerce.Home.SignUp.SignUpRequest;
 import com.eCom.eCommerce.Home.SignUp.SignUpResponse;
-import com.eCom.eCommerce.Repository.UserRepository;
-import com.eCom.eCommerce.User.User;
 import com.eCom.eCommerce.User.UserService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

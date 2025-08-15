@@ -14,7 +14,7 @@ public class UserService {
     private UserRepository userRepository;
     
     public LoginResponse loginUser(LoginRequest loginRequest){
-        Optional<User> optionalUser = UserRepository.findByEmail(loginRequest.getEmail());
+        Optional<User> optionalUser = userRepository.findByEmail(loginRequest.getEmail());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             if (user.getPassword().equals(loginRequest.getPassword())) {
