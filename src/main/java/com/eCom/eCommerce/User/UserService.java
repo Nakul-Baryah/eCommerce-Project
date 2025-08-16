@@ -23,7 +23,8 @@ public class UserService {
         Optional<User> optionalUser = userRepository.findByEmail(loginRequest.getEmail());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            if (user.getPassword().equals(loginRequest.getPassword())) {
+            String encodedPassword = passwordEncoder.encode(loginRequest.getPassword());
+            if (encodedPassword.equals(user.getPassword())) {
                 return new LoginResponse("success", "Login successful");
             }else{
                 return new LoginResponse("passwordFailure", "Invalid email or password");
