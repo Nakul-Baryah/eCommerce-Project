@@ -36,8 +36,10 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String Address;
+    private String address = "N/A"; // Or omit it entirely when saving
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;
+
+    private String mobile;
 }

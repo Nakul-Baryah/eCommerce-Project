@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.eCom.eCommerce.Home.Login.LoginRequest;
 import com.eCom.eCommerce.Home.Login.LoginResponse;
+import com.eCom.eCommerce.Home.SignUp.SignUpRequest;
+import com.eCom.eCommerce.Home.SignUp.SignUpResponse;
 import com.eCom.eCommerce.Repository.UserRepository;
 
 @Service
@@ -24,6 +26,21 @@ public class UserService {
             }
         } else {
             return new LoginResponse("userFailure", "User does not exist");
+        }
+    }
+
+    public SignUpResponse signUpUser(SignUpRequest signUpRequest){
+        Optional<User> optionalUser = userRepository.findByEmail(signUpRequest.getEmail());
+        if (optionalUser.isPresent()) {
+            return new SignUpResponse("userExists", "User already exists with this email");
+        } else {
+            User newUser = new User();
+            newUser.setEmail(signUpRequest.getEmail());
+            newUser.setPassword(signUpRequest.getPassword());
+            newUser.setUserName(signUpRequest.getUserName());
+            newUser.setMobile(signUpRequest.getMobile());
+            userRepository.save(newUser);
+            return new SignUpResponse("Success", "Sign up successful");
         }
     }
 }

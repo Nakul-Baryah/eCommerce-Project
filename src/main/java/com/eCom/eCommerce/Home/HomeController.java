@@ -68,7 +68,15 @@ public class HomeController {
 
     @PostMapping("/signUp")
     public ResponseEntity<SignUpResponse> signUp(@RequestBody SignUpRequest signUpRequest){
-        return null;
+        log.info("Sign Up request received for email: {}", signUpRequest.getEmail());
+        SignUpResponse signUpResponse = userService.signUpUser(signUpRequest);
+        if(signUpResponse.getStatus().equals("Success")){
+            log.info("Sign Up successful for user: {}", signUpRequest.getEmail());
+            return ResponseEntity.ok(signUpResponse);
+        }else{
+            log.error("Sign up Failed for user : {}", signUpRequest.getEmail());
+            return ResponseEntity.status(401).body(signUpResponse);
+        }
     }
 
 }
