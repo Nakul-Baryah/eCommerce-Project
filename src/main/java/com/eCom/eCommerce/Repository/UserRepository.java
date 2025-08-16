@@ -10,4 +10,5 @@ import com.eCom.eCommerce.User.User;
 public interface UserRepository extends JpaRepository<User, String> {
 
     Optional<User> findByEmail(String email);
+    Optional<User> findByMobile(String mobile);
 } 
